@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="app">
+        <p v-if="isLoading">Loading..</p>
+        <div id="isLoading" v-if="!isLoading">
+            <vue-cart 
+                :cart=cart 
+                title="Shopping Cart" 
+                type="shoppingCart"
+                @itemchangedoncart="handleItemChange"
+            ></vue-cart>
+
+            <vue-cart 
+                :cart=saved 
+                title="Saved for Later" 
+                type="savedForLater"
+                @itemchangedoncart="handleItemChange"
+            ></vue-cart>
+        </div>
+    </div>
+</body>
+</html>
